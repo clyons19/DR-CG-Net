@@ -10,11 +10,11 @@ An implementation of Projected Gradient Descent DR-CG-Net (PGD DR-CG-Net) and It
 
 ### Implementation Overview:
 The DR-CG-Net method is an algorithm-unrolled deep neural network that solves linear inverse problems to the forward measurement model
-\\[
+\[
 y = \Psi\Phi c + \nu \equiv Ac+\nu
-\\]
+\]
 where $\Psi\in\mathbb{R}^{m\times n}$ is a measurement matrix, $\Phi\in\mathbb{R}^{n\times n}$ is a change-of-basis dictionary, $x = \Phi c$ is an underlying signal of interest (i.e. an image) for $c\in\mathbb{R}^n$ the change-of-basis coefficients, $\nu\in\mathbb{R}^m$ is additive white Gaussian noise, and $y\in\mathbb{R}^m$ is the measurement/observation of $x$. To solve inverse problems, statistical prior information on $c$ (or $x$) is typically incorporated for which we use a compound Gaussian (CG) prior. Using the CG prior we decompose $c = z\odot u$ for two independent random vectors $z$ and $u$ where $u$ is Gaussian and $z$ is positive and non-Gaussian. Thus, the maximum a posteriori (MAP) estimate of $z$ and $u$ from $y = A(z\odot u)+\nu$ is given by
-\\[
+\[
 \arg\min_{[z, u]} \frac{1}{2} ||y - A(z\odot u)||_2^2 + \frac{1}{2} u^TP_u^{-1} u + R(z)
-\\]
+\]
 where $P_u$ is the covariance matrix of $u$ and $R$ is a regularization function equal to the negative log prior of $z$.
