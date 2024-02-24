@@ -36,3 +36,5 @@ The diagram below displays the DR-CG-Net architecture, which consists of alterna
 ![DR-CG-Net Diagram](images/DR-CG-Net_diagram.PNG?raw=true)
 
 DR-CG-Net has been empirically shown to provide state-of-the-art performance when limited training data is available. Below is a sample reconstructed image. 
+
+![DR-CG-Net Diagram](images/CS_recon.PNG?raw=true)
