@@ -31,3 +31,4 @@ $$g(z,u) = P_Z(z - \eta \nabla_z F(z,u)) = P_Z(z - \eta(A_u^T(A_uz-y)+\nabla R(z
 $$g(z,u) = \text{prox}_{\eta R}(z -\eta A_u^T(A_uz-y)) \coloneqq \arg\min_t \frac{1}{2}||t - (z-\eta A_u^T(A_uz-y))||_2^2+\eta R(t)$$
 
 #### Unrolled DR-CG-Net
+![alt text](https://github.com/clyons19/DR-CG-Net/tree/main/images/DR-CG-Net%20diagram.PNG)
