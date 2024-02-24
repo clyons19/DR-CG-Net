@@ -21,7 +21,7 @@ $$F(z,u) \coloneqq  \frac{1}{2} ||y - A(z\odot u)||_2^2 + \frac{1}{2} u^TP_u^{-1
 where $P_u$ is the covariance matrix of $u$ and $R$ is a regularization function equal to the negative log prior of $z$ (which can be specified on a problem-specific basis). For notation, we write
 $$A_z = A\text{diag}(z).$$
 We consider an alternating block-coordinate descent to approximate $\hat{z}$ and $\hat{u}$. Thus, on iteration $k$
-$$u_k = \arg\min_u F(z_k, u) \coloneqq P_u A_z^T(I+A_zP_uA_z^T)^{-1}y$$
+$$u_k = \arg\min_u F(z_k, u) = \mathcal{T}(z; P_u) \coloneqq P_u A_z^T(I+A_zP_uA_z^T)^{-1}y$$
 (note for larger signal sizes where the above inverse is intractable to solve, we instead approximate the above inverse with Nesterov accelerated gradient descent steps) and
 $$z_k = J \text{ applications of a descent function  } g(z,u):\mathbb{R}^n\times\mathbb{R}^n\to\mathbb{R}^n.$$
 Two descent functions we employ are
@@ -31,4 +31,8 @@ $$g(z,u) = P_Z(z - \eta \nabla_z F(z,u)) = P_Z(z - \eta(A_u^T(A_uz-y)+\nabla R(z
 $$g(z,u) = \text{prox}_{\eta R}(z -\eta A_u^T(A_uz-y)) \coloneqq \arg\min_t \frac{1}{2}||t - (z-\eta A_u^T(A_uz-y))||_2^2+\eta R(t)$$
 
 #### Unrolled DR-CG-Net
+The diagram below displays the DR-CG-Net architecture, which consists of alternating blocks $U_k$ and $\mathcal{Z}_k$ that estimate $u$ and $z$, respectively. Each $U_k = \mathcal{T}(Z_k; P_u)$ where $P_u$ is a positive definite matrix that is learned by DR-CG-Net and shared across the $U_k$'s. Each $\mathcal{Z}_k$ consists of $J$ blocks $g_k^{(j)}$ that correspond to the PGD or ISTA descent functions $g(z,u)$ above. In each $g_k^{(j)}$, the layer $r_k^(j) = z - \eta A_u^T(A_uz-y)$ for a learned step size $\eta$ and $W_k^{(j)}$ is an embedded convolutional subnetwork that approximates $\eta\nabla R(z)$ in PGD or $\text{prox}\_{\eta R}$  in ISTA.
+
 ![DR-CG-Net Diagram](images/DR-CG-Net_diagram.PNG?raw=true)
+
+DR-CG-Net has been empirically shown to provide state-of-the-art performance when limited training data is available. Below is a sample reconstructed image. 
