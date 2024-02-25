@@ -31,7 +31,7 @@ $$g(z,u) = P_Z(z - \eta \nabla_z F(z,u)) = P_Z(z - \eta(A_u^T(A_uz-y)+\nabla R(z
 $$g(z,u) = \text{prox}_{\eta R}(z -\eta A_u^T(A_uz-y)) \coloneqq \arg\min_t \frac{1}{2}||t - (z-\eta A_u^T(A_uz-y))||_2^2+\eta R(t)$$
 
 #### Unrolled DR-CG-Net
-The diagram below displays the DR-CG-Net architecture, which consists of alternating blocks $U_k$ and $\mathcal{Z}_k$ that estimate $u$ and $z$, respectively. Each $U_k = \mathcal{T}(Z_k; P_u)$ where $P_u$ is a positive definite matrix that is learned by DR-CG-Net and shared across the $U_k$'s. Each $\mathcal{Z}_k$ consists of $J$ blocks $g_k^{(j)}$ that correspond to the PGD or ISTA descent functions $g(z,u)$ above. In each $g_k^{(j)}$, the layer $r_k^(j) = z - \eta A_u^T(A_uz-y)$ for a learned step size $\eta$ and $W_k^{(j)}$ is an embedded convolutional subnetwork that approximates $\eta\nabla R(z)$ in PGD or $\text{prox}\_{\eta R}$  in ISTA.
+The diagram below displays the DR-CG-Net architecture, which consists of alternating blocks $U_k$ and $\mathcal{Z}_k$ that estimate $u$ and $z$, respectively. Each $U_k = \mathcal{T}(Z_k; P_u)$ where $P_u$ is a positive definite matrix that is learned by DR-CG-Net and shared across the $U_k$'s. Each $\mathcal{Z}_k$ consists of $J$ blocks $g_k^{(j)}$ that correspond to the PGD or ISTA descent functions $g(z,u)$ above. In each $g_k^{(j)}$, the layer $r_k^{(j)} = z - \eta A_u^T(A_uz-y)$ for a learned step size $\eta$ and $W_k^{(j)}$ is an embedded convolutional subnetwork that approximates $\eta\nabla R(z)$ in PGD or $\text{prox}\_{\eta R}$  in ISTA.
 
 ![DR-CG-Net Diagram](images/DR-CG-Net_diagram.PNG?raw=true)
 
