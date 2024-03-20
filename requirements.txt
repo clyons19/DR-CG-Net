@@ -1,0 +1,11 @@
+# Anaconda is assumed to be installed
+# This file may be used to create an environment using the following commands inside of Anaconda Prompt:
+# 	conda create --name <env> --file requirements.txt --channel default --channel anaconda --channel conda-forge
+
+python==3.9.12
+tensorflow==2.5.0
+numpy==1.22.3
+pandas==1.4.2
+pillow==9.0.1
+scikit-image==0.19.2
+matplotlib==3.5.2
