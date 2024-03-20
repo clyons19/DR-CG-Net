@@ -5,7 +5,7 @@ All rights to this code are reserved. Commercial and research licenses are avail
 An implementation of Projected Gradient Descent DR-CG-Net (PGD DR-CG-Net) and Iterative Shrinkage and Thresholding Algorithm DR-CG-Net (ISTA DR-CG-Net) from
   1. Lyons C., Raj R. G., & Cheney M. (2023). "Deep Regularized Compound Gaussian Network for Solving Linear Inverse Problems." [arXiv preprint arXiv:2311.17248.](https://arxiv.org/abs/2311.17248#:~:text=Deep%20Regularized%20Compound%20Gaussian%20Network%20for%20Solving%20Linear%20Inverse%20Problems,-Carter%20Lyons%2C%20Raghu&text=Incorporating%20prior%20information%20into%20inverse,facilitating%20robust%20inverse%20problem%20solutions.)
 
-  2. Lyons C., Raj R. G., & Cheney M. (2024). "Deep Regularized Compound Gaussian Network for Solving Linear Inverse Problems," in IEEE Transactions on Computational Imaging, vol. 10, pp. 399-414, 2024, doi: 10.1109/TCI.2024.3369394.
+  2. Lyons C., Raj R. G., & Cheney M. (2024). "Deep Regularized Compound Gaussian Network for Solving Linear Inverse Problems," in IEEE Transactions on Computational Imaging, vol. 10, pp. 399-414, 2024, doi: [10.1109/TCI.2024.3369394.](https://ieeexplore.ieee.org/abstract/document/10445131)
 
 See 'requirements.txt' for the python version, packages, and package versions utilized for this project.
 
