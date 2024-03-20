@@ -7,6 +7,7 @@ An implementation of Projected Gradient Descent DR-CG-Net (PGD DR-CG-Net) and It
 
   2. Lyons C., Raj R. G., & Cheney M. (2024). "Deep Regularized Compound Gaussian Network for Solving Linear Inverse Problems," in IEEE Transactions on Computational Imaging. in-press.
 
+See 'requirements.txt' for the python version, packages, and package versions utilized for this project.
 
 ### Implementation Overview:
 The DR-CG-Net method is an algorithm-unrolled deep neural network (DNN) that solves linear inverse problems to the forward measurement model
